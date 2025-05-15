@@ -1,4 +1,4 @@
-import FormTemplate from '../components/FormTemplate';
+import FormTemplate from "../components/FormTemplate";
 
 const Auth = () => {
   return (
@@ -6,17 +6,11 @@ const Auth = () => {
       <div className="auth-forms">
         <FormTemplate
           title="Регистрация"
-          fields={['name', 'email', 'password', 'phone']}
+          fields={["имя", "почта", "пароль", "телефон"]}
         />
-        <FormTemplate
-          title="Авторизация"
-          fields={['email', 'password']}
-        />
+        <FormTemplate title="Авторизация" fields={["почта", "пароль"]} />
         <div className="password-recovery">
-          <h3>Восстановление пароля</h3>
-          <FormTemplate
-            fields={['email']}
-          />
+          <FormTemplate title={["Восстановление пароля"]} fields={["почта"]} />
         </div>
       </div>
     </section>

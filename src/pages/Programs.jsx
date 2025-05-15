@@ -16,7 +16,7 @@ const Programs = () => {
       </div>
       <FormTemplate
         title="Запись на пробное занятие"
-        fields={['child-name', 'parent-name', 'phone', 'age-group']}
+        fields={['Имя ребёнка', 'Имя родителя', 'Телефон', 'Возврастная группа']}
       />
     </section>
   );

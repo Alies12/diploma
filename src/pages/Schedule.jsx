@@ -15,10 +15,6 @@ const Schedule = () => {
             </ul>
           </div>
         </div>
-        <FormTemplate
-          title="Запрос на изменение расписания"
-          fields={['name', 'phone', 'message']}
-        />
       </div>
     </section>
   );

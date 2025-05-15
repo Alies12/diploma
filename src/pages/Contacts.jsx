@@ -11,7 +11,7 @@ const Contacts = () => {
         </div>
         <FormTemplate
           title="Форма обратной связи"
-          fields={['name', 'email', 'message']}
+          fields={['имя', 'почта', 'сообщение']}
         />
       </div>
     </section>

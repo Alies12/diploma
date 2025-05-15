@@ -7,8 +7,8 @@ const Services = () => {
       <div className="service-list">
       </div>
       <FormTemplate 
-        title="Запись на занятия"
-        fields={['name', 'phone', 'email', 'service']}
+        title="Запись на услугу"
+        fields={['имя', 'телефон', 'почта', 'услуга']}
       />
     </section>
   );

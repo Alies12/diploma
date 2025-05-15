@@ -14,7 +14,7 @@ const Reviews = () => {
       </div>
       <FormTemplate
         title="Оставить отзыв"
-        fields={['name', 'email', 'review-text']}
+        fields={['Имя', 'почта', 'текст']}
         textareaField="review-text"
       />
     </section>
