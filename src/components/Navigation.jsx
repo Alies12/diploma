@@ -55,11 +55,6 @@ const Navigation = forwardRef(({ isOpen, onClose }, ref) => {
             </Link>
           </li>
           <li>
-            <Link to="/auth" onClick={onClose}>
-              Вход
-            </Link>
-          </li>
-          <li>
             <Link to="/cabinet" onClick={onClose}>
               Кабинет
             </Link>

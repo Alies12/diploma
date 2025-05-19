@@ -1,9 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const PersonalCabinet = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Проверяем, есть ли токен в localStorage
+    if (!localStorage.getItem('authToken')) {
+      navigate('/login'); // или на другую страницу, если пользователь не авторизован
+    }
+  }, [navigate]);
+
   return (
-    <section className="page-section personal-cabinet">
+   <section className="page-section personal-cabinet">
       <div className="user-info">
         <h2>Личный кабинет</h2>
         <div className="user-card">
