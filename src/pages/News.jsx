@@ -1,4 +1,3 @@
-// src/pages/News.js
 import { useContext, useState, useEffect } from 'react';
 import { DataContext } from '../DataContext';
 import FormTemplate from '../components/FormTemplate';
@@ -110,7 +109,6 @@ const News = () => {
           newsComments.map(comment => (
             <div key={comment.id} className="news-card">
               <h4 className="comment-name">{comment.fullname}</h4>
-              <p className="comment-email">{comment.email}</p>
               <p className="comment-description">{comment.description}</p>
             </div>
           ))

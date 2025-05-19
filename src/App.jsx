@@ -12,7 +12,7 @@ import Auth from './pages/Auth';
 import PersonalCabinet from './pages/PersonalCabinet';
 import News from './pages/News';
 import { DataProvider } from './DataContext';
-import ProtectedRoute from './components/ProtectedRoute'; // Импортируйте ProtectedRoute
+import ProtectedRoute from './components/ProtectedRoute'; 
 
 function App() {
   return (

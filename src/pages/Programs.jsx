@@ -1,4 +1,3 @@
-// src/pages/Programs.js
 import React, { useState } from 'react';
 import FormTemplate from '../components/FormTemplate';
 import api from '../api/api';
@@ -100,7 +99,7 @@ const Programs = () => {
             selectOptions={{
               'Возрастная группа': [
                 { value: '1-3 года', label: '1-3 года' },
-                { value: '4-7 лет', label: '4-6 лет' },
+                { value: '4-7 лет', label: '4-7 лет' },
               ],
             }}
             customValidation={customValidation}

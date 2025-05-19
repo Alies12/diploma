@@ -1,4 +1,3 @@
-// src/pages/Services.js
 import { useContext, useState, useEffect } from 'react';
 import { DataContext } from '../DataContext';
 import FormTemplate from '../components/FormTemplate';
@@ -81,7 +80,6 @@ const Services = () => {
       errors['телефон'] = 'Введите корректный телефон (например, +79991234567)';
     }
 
-    // Строгая проверка description
     if (!formData['описание'] || formData['описание'].trim().length < 10) {
       errors['описание'] = 'Описание должно быть минимум 10 символов ';
 }

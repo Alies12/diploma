@@ -1,4 +1,3 @@
-// src/pages/Reviews.js
 import { useContext, useState, useEffect } from 'react';
 import { DataContext } from '../DataContext';
 import FormTemplate from '../components/FormTemplate';
@@ -90,7 +89,6 @@ const Reviews = () => {
           feedbackList.map(feedback => (
             <div key={feedback.id} className="review-card">
               <h3 className="review-name">{feedback.fullname}</h3>
-              <p className="review-email">{feedback.email}</p>
               <p className="review-description">{feedback.description}</p>
             </div>
           ))

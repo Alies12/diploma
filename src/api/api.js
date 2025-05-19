@@ -1,4 +1,3 @@
-// src/api/api.js
 import axios from 'axios';
 
 const API_BASE_URL = 'http://localhost:5000';
@@ -40,7 +39,26 @@ export const api = {
       throw error;
     }
   },
-
+  async getUserHistory(userId, token) {
+    try {
+      console.log('Calling getUserHistory...');
+      const response = await fetch(`${API_BASE_URL}/user_history?id=${userId}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Ошибка при загрузке истории записей:', error.message);
+      throw error;
+    }
+  },
   async getParents_feedback() {
     try {
       console.log('Calling getParents_feedback...');

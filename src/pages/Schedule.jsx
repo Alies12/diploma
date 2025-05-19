@@ -1,7 +1,5 @@
-// src/pages/Schedule.js
 import { useContext } from "react";
 import { DataContext } from "../DataContext";
-import FormTemplate from "../components/FormTemplate";
 
 const Schedule = () => {
   const { data, loading, error } = useContext(DataContext);
