@@ -3,7 +3,6 @@ import axios from 'axios';
 const API_BASE_URL = 'http://localhost:5000';
 
 export const api = {
-  // GET-запросы
   async getInitialData() {
     try {
       console.log('Calling getInitialData...');
@@ -196,7 +195,6 @@ throw error;
 }
 },
 
-// Вход
 async postLogin (data)  {
   try {
   const response = await axios.post(`${API_BASE_URL}/auth/login`, data);
@@ -211,7 +209,7 @@ throw error;
 }
 },
 
-// Восстановление пароля
+
 async postPasswordRecovery(data) {
   try {
   const response = await axios.post(`${API_BASE_URL}/auth/password-recovery`, data);
