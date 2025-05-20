@@ -4,6 +4,7 @@ import { DataContext } from '../DataContext';
 const About = () => {
   const { data, loading, error } = useContext(DataContext);
   const employees = data.employees || [];
+  console.log(data.employees);
 
   return (
     <section className="page-section">
@@ -23,7 +24,7 @@ const About = () => {
                 <div key={employee.id} className="team-member-card">
                   <div className="team-member-content">
                     <img
-                      src={employee.photo || '/def.jpg'}
+                      src={`https://solichko.ru:3001${employee.photo}` || '/def.jpg'}
                       alt={employee.fullname}
                       className="team-member-photo"
                       onError={(e) => {

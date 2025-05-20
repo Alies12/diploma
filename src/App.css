@@ -850,3 +850,9 @@ body {
 .logout-btn:hover {
   background: var(--accent-color);
 }
+.comments-section{
+  gap: 10;
+}
+.services-grid{
+  gap: 10;
+}

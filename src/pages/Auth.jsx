@@ -19,7 +19,6 @@ const Auth = () => {
       const password = formData['пароль']?.trim();
 
       if (activeForm === 'register') {
-        // Регистрация
         await api.postRegister({
           username: formData['имя'].trim(),
           email,
@@ -27,7 +26,6 @@ const Auth = () => {
           phone: formData['телефон']?.trim() || ''
         });
 
-        // Автоматический вход после регистрации
         const loginResponse = await api.postLogin({ email, password });
         localStorage.setItem('authToken', loginResponse.token);
         localStorage.setItem('userData', JSON.stringify(loginResponse.user));
