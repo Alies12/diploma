@@ -85,10 +85,10 @@ const News = () => {
   return (
     <section className="page-section">
       <h2>Новости и события</h2>
-      <div className="news-card">
-        {news.length > 0 ? (
-          news.map(item => (
-            <article key={item.id} className="news-article">
+      {news.length > 0 ? (
+        news.map(item => (
+          <div key={item.id} className="news-card">
+            <article>
               <h3 className="news-title">{item.fullname}</h3>
               <p className="news-description">{item.description}</p>
               <div className="news-meta">
@@ -98,11 +98,11 @@ const News = () => {
                 <span className="news-email">{item.email}</span>
               </div>
             </article>
-          ))
-        ) : (
-          <p>Новостей пока нет</p>
-        )}
-      </div>
+          </div>
+        ))
+      ) : (
+        <p>Новостей пока нет</p>
+      )}
       <div className="comments-section">
         <h3>Комментарии</h3>
         {newsComments.length > 0 ? (

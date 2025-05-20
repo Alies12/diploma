@@ -85,10 +85,11 @@ body {
 .page-section {
   padding: 2rem 1rem;
   animation: fadeIn 0.5s ease-in;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1600px;
   width: 100%;
+  margin: 0 auto;
   box-sizing: border-box;
+  min-width: 1220px; /* Увеличено для 7 карточек по 150px + 6 * 2.5rem */
 }
 
 @keyframes fadeIn {
@@ -141,8 +142,12 @@ body {
 .news-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 3rem;
   margin: 2rem 0;
+}
+
+.news-card {
+  margin-bottom: 3rem;
 }
 
 .form-template {
@@ -366,6 +371,11 @@ body {
 
   .news-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .news-card {
+    margin-bottom: 2rem;
   }
 }
 
@@ -399,6 +409,14 @@ body {
   .avatar-placeholder {
     width: 80px;
     height: 80px;
+  }
+
+  .news-grid {
+    gap: 1.5rem;
+  }
+
+  .news-card {
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -532,8 +550,8 @@ body {
 }
 
 .team-members {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
   margin-top: 1rem;
 }
@@ -578,54 +596,162 @@ body {
 }
 
 .schedule-container {
-  max-width: 800px;
-  margin: 0 auto;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.timetable-wrapper {
+  background: linear-gradient(145deg, #ffffff, #f0f4f8);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--primary-color);
+  overflow: hidden;
 }
 
 .timetable {
-  background: white;
-  padding: 1.5rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  border: 2px solid var(--primary-color);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 2.5rem;
+  width: 100%;
 }
 
 .timetable-day {
-  display: inline-block;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  background: linear-gradient(145deg, #ffffff, #f0f4f8);
+  padding: 1.5rem;
   border-radius: var(--border-radius);
-  background: var(--bg-color);
-  border: 1px solid var(--accent-color);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   transition: var(--transition);
-  vertical-align: top;
-  min-width: 200px;
-}
-
-.timetable-day:last-child {
-  margin-bottom: 0;
+  margin-bottom: 1.5rem;
+  flex: 0 0 150px; /* Увеличено с 120px */
+  min-width: 150px;
+  max-width: 150px;
+  border: 2px solid var(--primary-color);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрирование содержимого */
 }
 
 .timetable-day:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent-color);
 }
 
 .timetable-day h3 {
   font-family: 'Cherry Cream Soda', cursive;
-  font-size: 1.4rem;
+  font-size: 1.4rem; /* Уменьшено с 1.6rem */
   color: var(--text-color);
-  margin-bottom: 0.5rem;
-  text-align: left;
+  margin-bottom: 0.8rem;
+  text-align: center;
+  white-space: normal; /* Разрешаем перенос */
+  overflow-wrap: break-word; /* Перенос длинных слов */
+}
+
+.timetable-day::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--secondary-color);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
 }
 
 .timetable-description {
-  font-size: 1rem;
+  white-space: normal;
+  font-size: 0.9rem; /* Уменьшено с 1rem */
   color: var(--text-color);
   line-height: 1.5;
-  text-align: left;
-  white-space: pre-wrap;
+  text-align: center; /* Центрирование текста */
+  overflow-wrap: break-word; /* Перенос длинных слов */
 }
+
+@media (max-width: 1200px) {
+  .timetable {
+    gap: 1.5rem;
+  }
+
+  .timetable-day {
+    flex: 0 0 120px; /* Уменьшено с 150px */
+    padding: 1rem;
+    margin-bottom: 1rem;
+    min-width: 120px;
+    max-width: 120px;
+  }
+
+  .timetable-day h3 {
+    font-size: 1.2rem; /* Уменьшено */
+  }
+
+  .timetable-description {
+    font-size: 0.8rem; /* Уменьшено */
+  }
+
+  .page-section {
+    max-width: 1200px;
+    min-width: 960px; /* 7 * 120px + 6 * 1.5rem */
+  }
+}
+
+@media (max-width: 768px) {
+  .timetable {
+    gap: 1rem;
+  }
+
+  .timetable-day {
+    flex: 0 0 100px; /* Уменьшено с 90px */
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+    min-width: 100px;
+    max-width: 100px;
+  }
+
+  .timetable-day h3 {
+    font-size: 1rem; /* Уменьшено */
+  }
+
+  .timetable-description {
+    font-size: 0.7rem; /* Уменьшено */
+  }
+
+  .page-section {
+    max-width: 1000px;
+    min-width: 820px; /* 7 * 100px + 6 * 1rem */
+  }
+}
+
+@media (max-width: 480px) {
+  .timetable {
+    gap: 0.5rem;
+  }
+
+  .timetable-day {
+    flex: 0 0 80px; /* Уменьшено с 70px */
+    padding: 0.6rem;
+    margin-bottom: 0.6rem;
+    min-width: 80px;
+    max-width: 80px;
+  }
+
+  .timetable-day h3 {
+    font-size: 0.9rem; /* Уменьшено */
+  }
+
+  .timetable-description {
+    font-size: 0.6rem; /* Уменьшено */
+  }
+
+  .page-section {
+    max-width: 800px;
+    min-width: 620px; /* 7 * 80px + 6 * 0.5rem */
+  }
+}
+
 /* Основные стили кнопок */
 .auth-button {
   display: inline-block;
@@ -644,7 +770,7 @@ body {
 
 /* Основная кнопка отправки формы */
 .auth-submit-button {
-  background-color: #4CAF50; /* Зеленый */
+  background-color: #4CAF50;
   color: white;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
@@ -792,44 +918,7 @@ body {
     font-size: 15px;
   }
 }
-.schedule-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2.5rem;
-  margin: 2rem 0;
-}
 
-.schedule-day {
-  background: white;
-  padding: 1.5rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  margin-bottom: 1.5rem;
-  transition: var(--transition);
-}
-.timetable-day{
-  gap: 10px;
-}
-@media (max-width: 768px) {
-  .schedule-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .schedule-day {
-    margin-bottom: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .schedule-container {
-    gap: 1.5rem;
-  }
-
-  .schedule-day {
-    margin-bottom: 1.5rem;
-  }
-}
 .logout-container {
   margin-top: 1rem;
   text-align: center;
@@ -850,9 +939,7 @@ body {
 .logout-btn:hover {
   background: var(--accent-color);
 }
-.comments-section{
-  gap: 10;
-}
-.services-grid{
-  gap: 10;
+
+.comments-section {
+  gap: 10px;
 }

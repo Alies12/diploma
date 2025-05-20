@@ -14,7 +14,7 @@ const Footer = () => {
             <a href="/">WhatsApp</a>
           </div>
           <div className="copyright">
-            <p>© 2023 Детский Центр "Солнышко"</p>
+            <p>© 2025 Детский Центр "Солнышко"</p>
           </div>
         </div>
       </footer>
