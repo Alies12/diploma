@@ -4,9 +4,6 @@
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.2.0",
-    "@testing-library/user-event": "^13.5.0",
     "axios": "^1.9.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -18,8 +15,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "https": "cross-env PORT=443 HTTPS=true SSL_CRT_FILE=ssl/certificate.crt SSL_KEY_FILE=ssl/certificate.key npm start",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "jest --verbose",
+    "test:watch": "jest --watch"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +37,19 @@
     ]
   },
   "devDependencies": {
-    "cross-env": "^7.0.3"
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-react": "^7.27.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^29.5.14",
+    "axios-mock-adapter": "^2.1.0",
+    "babel-jest": "^29.7.0",
+    "cross-env": "^7.0.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jest-fetch-mock": "^3.0.3"
   }
 }

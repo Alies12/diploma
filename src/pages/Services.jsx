@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import { DataContext } from '../DataContext';
 import FormTemplate from '../components/FormTemplate';
-import api from '../api/api';
+import api from '../api/api.js';
 
 const Services = () => {
   const { data, loading, error, refetch } = useContext(DataContext);

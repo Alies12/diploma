@@ -8,12 +8,12 @@ const Header = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    console.log(isMenuOpen)
+    console.log(isMenuOpen);
   };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
-    console.log(isMenuOpen)
+    console.log(isMenuOpen);
   };
 
   useEffect(() => {
@@ -39,6 +39,9 @@ const Header = () => {
 
   return (
     <header className="header">
+      <div className="stage">
+        <div className="sun"></div>
+      </div>
       <div className="logo">
         <h1>Детский Центр "Солнышко"</h1>
       </div>
@@ -49,9 +52,11 @@ const Header = () => {
         aria-label="Меню"
         aria-expanded={isMenuOpen}
       >
-        <span></span>
-        <span></span>
-        <span></span>
+        <>
+          <span></span>
+          <span></span>
+          <span></span>
+        </>
       </button>
       <Navigation isOpen={isMenuOpen} onClose={closeMenu} ref={menuRef} />
     </header>

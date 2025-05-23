@@ -1,5 +1,5 @@
-import React, { createContext, useState, useEffect } from 'react';
-import { api } from './api/api';
+import React, { createContext, useState, useEffect } from "react";
+import api from "./api/api.js";
 
 export const DataContext = createContext();
 
@@ -12,11 +12,11 @@ export const DataProvider = ({ children }) => {
     try {
       setLoading(true);
       const initialData = await api.getInitialData();
-      console.log('Данные с сервера:', initialData);
+      console.log("Данные с сервера:", initialData);
       setData(initialData);
       setError(null);
     } catch (err) {
-      console.error('Ошибка загрузки данных:', err);
+      console.error("Ошибка загрузки данных:", err);
       setError(err.message);
     } finally {
       setLoading(false);

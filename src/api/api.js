@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { SERVER_URL } from '../utils/config';
 
-const  API_BASE_URL = 'https://solichko.ru:3001';
+const  API_BASE_URL = SERVER_URL;
 
 export const api = {
   async getInitialData() {

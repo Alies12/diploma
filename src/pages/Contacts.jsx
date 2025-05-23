@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import FormTemplate from '../components/FormTemplate';
-import api from '../api/api';
+import api from '../api/api.js';
 
 const Contacts = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
